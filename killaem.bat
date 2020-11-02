@@ -7,6 +7,7 @@ DEL temp.txt
 ECHO processes for 4502 and 4503 have PIDS:  %temp%
 
 SET /p isConfirmed="Do you want to kill these processes (Y/N): "
+goto :main
 
 :main
     IF "%isConfirmed%"=="Y" (
@@ -28,10 +29,10 @@ goto :eof
         )
     )
     ) ELSE (
-        ECHO MESSAGE: No node tasks to kill
+        ECHO MESSAGE: No tasks to kill
     )
 goto :eof
 
 :cancel
-    echo Nothing Done
+    echo MESSAGE: No tasks killed
 goto :eof
